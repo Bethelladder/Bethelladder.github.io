@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        .head_div {
+            height: 120px;
+            align-content: center;
+        }
+
+        .margindiv {
+            padding: 3%;
+        }
+
+        .main_image {
+            position: relative;
+        }
+
+        .main_image_text {
+            font-weight: 500;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .elove {
+            font-weight: 500;
+            position: absolute;
+            color: white;
+            bottom: 0%;
+            right: 16px;
+            font-size: 100px;
+        }
+
+        .love {
+            font-weight: 700;
+            position: absolute;
+            color: white;
+            top: 50%;
+            left: 15%;
+            font-size: 25px;
+        }
+
+        .think {
+            font-weight: 700;
+            position: absolute;
+            top: 70%;
+            left: 70%;
+            font-size: 25px;
+        }
+
+        .absolute-img {
+            text-align: center;
+        }
+
+        .text-section {
+            margin-top: 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        body {
+            font-family: 'Unbounded', sans-serif;
+            background-color: aliceblue;
+        }
+
+        .divbottomimg {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .divbottomimg img {
+            width: 100%;
+            transform: scale(2);
+            transform-origin: top right;
+        }
+
+        /* 사이드 메뉴 스타일 */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            /* 처음에는 화면 밖에 위치 */
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            transition: left 0.3s ease;
+            z-index: 1000;
+        }
+
+        .side-menu.open {
+            left: 0;
+            /* 메뉴가 열리면 화면 안으로 위치 */
+        }
+
+        .side-menu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 20px 0;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+</head>
+
+<body>
+    <header>
+        <div class="head_div">
+            <span id="menu-button" style="font-size: 20px; cursor: pointer;">
+                &nbsp&nbsp&nbspQ. 사려깊은 질문학교
+            </span>
+            <a href="https://www.instagram.com/ask_openers?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank">
+                <img src="img.png" height="30px" style="float: right;" alt="인스타그램 새 창 열기">
+            </a>
+        </div>
+
+        <hr>
+    </header>
+
+    <!-- 사이드 메뉴 -->
+    <div class="side-menu" id="side-menu">
+        <a href="#section1">Section 1</a>
+        <a href="#section2">Section 2</a>
+        <a href="#section3">Section 3</a>
+    </div>
+
+    <main>
+        <div class="main_image">
+            <div class="absolute-img">
+                <img class="margindiv" src="img2.png" width="80%">
+            </div>
+
+            <div class="main_image_text" style="font-size: 100px;">
+                PONDER
+            </div>
+            <div class="love">
+                : 사랑을
+            </div>
+            <div class="think">
+                : 깊이 생각하다
+            </div>
+            <div class="elove">
+                LOVE
+            </div>
+        </div>
+        <div class="text-section">
+            <p>
+                질문은 오직 하나뿐
+            </p>
+            <p>
+                " 어떻게 셋상을 사랑할 것인가 "
+            </p>
+            <p>
+                - 메기 올리버 / '기러기' -
+            </p>
+        </div>
+        <div class="divbottomimg">
+            <img src="img3.png" width="200%">
+        </div>
+    </main>
+
+    <script>
+        const menuButton = document.getElementById("menu-button");
+        const sideMenu = document.getElementById("side-menu");
+
+        menuButton.addEventListener("click", function () {
+            sideMenu.classList.toggle("open"); // 클릭 시 메뉴 열기/닫기
+        });
+
+        // 추가로, 화면의 다른 부분을 클릭하면 메뉴가 닫히도록 할 수 있습니다.
+        document.addEventListener("click", function (event) {
+            if (!sideMenu.contains(event.target) && !menuButton.contains(event.target)) {
+                sideMenu.classList.remove("open"); // 메뉴 외부 클릭 시 메뉴 닫기
+            }
+        });
+    </script>
+</body>
+
+</html>
