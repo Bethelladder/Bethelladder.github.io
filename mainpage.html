@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <style>
+        /* 기본 스타일 설정 */
         .head_div {
             height: 120px;
             align-content: center;
@@ -19,6 +20,7 @@
 
         .main_image {
             position: relative;
+            text-align: center;
         }
 
         .main_image_text {
@@ -26,32 +28,36 @@
             position: absolute;
             top: 0;
             left: 0;
+            font-size: 8vw;
+            /* 폰트 크기를 vw 단위로 변경 */
         }
 
         .elove {
             font-weight: 500;
             position: absolute;
             color: white;
-            bottom: 0%;
+            bottom: 0;
             right: 16px;
-            font-size: 100px;
+            font-size: 8vw;
+            /* 폰트 크기를 vw 단위로 변경 */
         }
 
         .love {
             font-weight: 700;
             position: absolute;
             color: white;
+            font-size: 2vw;
             top: 50%;
             left: 15%;
-            font-size: 25px;
         }
 
         .think {
             font-weight: 700;
             position: absolute;
+            font-size: 2vw;
             top: 70%;
             left: 70%;
-            font-size: 25px;
+            /* 폰트 크기를 vw 단위로 변경 */
         }
 
         .absolute-img {
@@ -59,21 +65,22 @@
         }
 
         .text-section {
-            font-size: 20px;
+            font-size: 3vw;
+            /* 폰트 크기를 vw 단위로 변경 */
             font-weight: 1000;
             margin-top: 20px;
             text-align: center;
             opacity: 0;
-            /* 처음에는 투명하게 설정 */
             transform: translateY(20px);
-            /* 처음에는 살짝 아래에 위치 */
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-            /* 애니메이션 효과 */
         }
 
         body {
             font-family: 'Unbounded', sans-serif;
             background-color: aliceblue;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         .divbottomimg {
@@ -83,16 +90,16 @@
 
         .divbottomimg img {
             width: 100%;
-            transform: scale(2);
+            transform: scale(1.5);
+            /* 모바일에서는 이미지 크기를 줄임 */
             transform-origin: top right;
         }
 
         .side-menu {
             position: fixed;
             top: 0;
-            left: -300px;
-            /* 처음에는 화면 밖에 위치 */
-            width: 250px;
+            left: -250px;
+            width: 200px;
             height: 100%;
             background-color: #333;
             color: white;
@@ -101,9 +108,25 @@
             z-index: 1000;
         }
 
+        .normal-link {
+            color: inherit;
+            /* 텍스트와 같은 색상 사용 */
+            text-decoration: none;
+            /* 밑줄 제거 */
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .normal-link:hover,
+        .normal-link:focus {
+            color: inherit;
+            /* 호버 상태에서도 색상 유지 */
+            text-decoration: none;
+            /* 호버 시 밑줄 유지하지 않음 */
+        }
+
         .side-menu.open {
             left: 0;
-            /* 메뉴가 열리면 화면 안으로 위치 */
         }
 
         .side-menu a {
@@ -113,7 +136,41 @@
             margin: 20px 0;
         }
 
-        @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+        @media (max-width: 768px) {
+
+            /* 작은 화면(태블릿 및 모바일)을 위한 스타일 조정 */
+            .head_div {
+                height: 80px;
+            }
+
+            .main_image_text {
+                font-size: 8vw;
+            }
+
+            .elove {
+                font-size: 8vw;
+                bottom: 5%;
+            }
+
+            .love,
+            .think {
+                font-size: 3.5vw;
+            }
+
+            .divbottomimg img {
+                transform: scale(1.2);
+                /* 모바일에서 이미지 크기를 조금 더 줄임 */
+            }
+
+            .side-menu {
+                width: 200px;
+                left: -300px;
+            }
+
+            .side-menu.open {
+                left: 0;
+            }
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -125,9 +182,11 @@
 <body>
     <header>
         <div class="head_div">
-            <span id="menu-button" style="font-size: 20px; cursor: pointer;">
+            <a href="/" class="normal-link">
                 &nbsp&nbsp&nbspQ. 사려깊은 질문학교
-            </span>
+
+
+            </a>
             <a href="https://www.instagram.com/ask_openers?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                 target="_blank">
                 <img class="instarpadding" src="img.png" height="30px" style="float: right;" alt="인스타그램 새 창 열기">
@@ -149,7 +208,7 @@
                 <img class="margindiv" src="img2.png" width="80%">
             </div>
 
-            <div class="main_image_text" style="font-size: 100px;">
+            <div class="main_image_text">
                 PONDER
             </div>
             <div class="love">
@@ -167,7 +226,7 @@
                 질문은 오직 하나뿐
             </p>
             <p>
-                " 어떻게 셋상을 사랑할 것인가 "
+                " 어떻게 세상을 사랑할 것인가 "
             </p>
             <p>
                 - 메기 올리버 / '기러기' -
@@ -203,7 +262,6 @@
             sideMenu.classList.toggle("open"); // 클릭 시 메뉴 열기/닫기
         });
 
-        // 추가로, 화면의 다른 부분을 클릭하면 메뉴가 닫히도록 할 수 있습니다.
         document.addEventListener("click", function (event) {
             if (!sideMenu.contains(event.target) && !menuButton.contains(event.target)) {
                 sideMenu.classList.remove("open"); // 메뉴 외부 클릭 시 메뉴 닫기
