@@ -86,6 +86,7 @@
         .divbottomimg {
             width: 100%;
             overflow: hidden;
+            position: relative;
         }
 
         .divbottomimg img {
@@ -115,6 +116,33 @@
             /* 밑줄 제거 */
             font-size: 20px;
             cursor: pointer;
+        }
+
+
+        .questionmain {
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .writepagelink {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .questiontext {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+
+        .hidden {
+            display: none;
         }
 
         .normal-link:hover,
@@ -157,8 +185,21 @@
                 font-size: 3.5vw;
             }
 
+            .questionmain {
+                font-size: 2vw;
+            }
+
+            .questiontext {
+                font-size: 2vw;
+            }
+
+            .writepagelink {
+                top: 30%;
+            }
+
             .divbottomimg img {
                 transform: scale(1.2);
+                position: relative;
                 /* 모바일에서 이미지 크기를 조금 더 줄임 */
             }
 
@@ -234,8 +275,218 @@
         </div>
         <div class="divbottomimg">
             <img src="img3.png" width="200%">
+            <div class="questionmain">
+                이달의 질문
+            </div>
+            <div class="questiontext hidden" id="jan">
+                <p>
+                    올 한 해동안 나는 어떤 사람으로 살고 싶나요?
+                    <br>
+                    나를 나답게 유지시켜주는 나만의 원칙은 무엇인가요?
+                    <br>
+                    의미있는 삶을 살기 위해서 무엇을 실천할 수 있을까요?
+                    <br>
+                    나는 타인에게 어떤 사랑을 나누며 좋은 영향을 끼칠 수 있을까요?
+                    <br>
+                    내가 생각하는 이상적인 세상의 모습은 어떤 세상인가요?
+                </p>
+            </div>
+            <div class="questiontext hidden" id="feb">
+                <p>
+                    나만의 사랑의 정의를 내려보세요!
+                    <br>
+                    사랑의 유형을 어떤 대상간의 유형으로 분류할 수 있을까요?
+                    <br>
+                    이 세상에 사랑이 없다면 어떻게 될까요?
+                    <br>
+                    지금 나는 누구를 사랑하고 있으며 그 대상을 위해 어떠한 일을 하나요?
+                </p>
+            </div>
+            <div class="questiontext hidden" id="mar">
+                <p>
+                    지금까지 자신의 삶을 이끌어 온 힘은 무엇인가요?
+                    <br>
+                    타인이 말하는 나의 강점은 무엇이 있나요?
+                    <br>
+                    내 삶에 회복되어야 할 영역은 무엇인가요?
+                    <br>
+                    나 자신과 주변에게 어떤 사람이고 싶나요?
+                    <br>
+                    현재 내가 바라는 사랑의 손길은 무엇인가요?
+                </p>
+            </div>
+            <div class="questiontext hidden" id="apr">
+                <p>
+                    내 삶을 변화시킨 질문을 받은 적이 있나요?
+                    <br>
+                    타인을 도울 수 있는 작은 실천은 무엇일까요?
+                    <br>
+                    나의 일상을 열심히 사는 것과 세상을 사랑하는 것은 어떤 관계가 있을까요?
+                    <br>
+                    나는 어떤 상황에서 사랑하지 못했나요?
+                </p>
+            </div>
+            <div class="questiontext hidden" id="may">
+                <p>
+                    내가 가장 소중하게 여기는 것은 무엇이며 왜 그런가요? 또 그것을 사랑하는 이에게 기꺼이 줄 수 있나요?
+                    <br>
+                    당신 주변에 사랑이 많은 사람은 누구인가요? 그 사람의 어떤 말과 행동 때문에 그렇게 생각했나요?
+                    <br>
+                    아낌없이 사랑을 줄 수 있으려면 나에게 무엇이(또는 어떤 변화) 필요할까요?
+                    <br>
+                    평균적으로 하루 몇 명에게, 몇 번의 사랑을 실천하고 있나요? 최소의 목표를 잡아보자면?
+                </p>
+            </div>
+            <div class="questiontext hidden" id="jun">
+                <p>
+                    누구를 사랑하고 싶나요? 사랑이 필요하다고 생각되는 사람은?
+                    <br>
+                    사랑을 떠오르게 하는 노래 3곡이 있다면 무엇인가요? 그 노래를 들을 때 누가 떠오르나요?
+                    <br>
+                    나는 사랑을 표현할 때 어떤 방식을 사용하나요? (언어, 행동 등)
+                    <br>
+                    사랑을 받을 때와 줄 때 중 어느 때가 더 기쁜가요? 이유는?
+                    <br>
+                    사랑하고자 한 시도가 거절 당했을 때 극복했던 경험이 있나요? 나만의 노하우가 있다면?
+                </p>
+            </div>
+            <div class="questiontext hidden" id="jul">
+                <p>
+                    어떤 방식으로 사람들을 응원하고 지지할 수 있나요?
+                    <br>
+                    세상의 이슈에 대해 얼마나 관심이 있나요? 최근에 가장 관심있었던(또는 가슴아팠던) 이슈는?
+                    <br>
+                    살면서 타인을 도왔던 기억에 남는 경험이 있나요?
+                    <br>
+                    타인과 생각이 잘 통한다고 느낄 만큼의 '진정한 소통'을 언제 해 보았나요?
+                </p>
+            </div>
+            <div class="questiontext hidden" id="aug">
+                <p>
+                    자신이 괴로울 때 주변을 돌아본 경험이 있나요?
+                    <br>
+                    내가 소진되었을 때 회복하기 위한 방법은 무엇인가요?
+                    <br>
+                    최근에 자신의 마음에 와닿았던 말이나 일화가 있다면 무엇이었나요?
+                    <br>
+                    평소에 주변 사람들의 안부를 묻는 연락을 하는 편인가요?
+                </p>
+            </div>
+            <div class="questiontext hidden" id="sep">
+                <p>
+                    어떤 사람인지 관계 없이 주위 사람들을 사랑할 수 있나요?
+                    <br>
+                    나의 욕구보다 상대방의 필요를 가치있게 우선으로 여겼던 경험이 있나요?
+                    <br>
+                    타인을 위함이 자신을 위함이 될 수 있다고 생각하나요?
+                    <br>
+                    지금까지 내 삶에서 가장 기억에 남는 배움과 실패에 대한 경험은 각각 무엇인가요?
+                    <br>
+                    내가 생각했을 때 마음이 아파오는 대상이 있나요?
+                </p>
+            </div>
+            <div class="questiontext hidden" id="oct">
+                <p>
+                    한결같은 사랑은 어떻게 표현될 수 있나요?
+                    <br>
+                    나는 어떤 사람에게 호기심이 생기나요?
+                    <br>
+                    우리가 나말고 남을 위해 행동하는 순간은 언제인가요?
+                    <br>
+                    나는 사랑에 대해 어떤 생각을 하고 있나요? 여러분의 의견을 보내주세요!
+                </p>
+            </div>
+            <div class="questiontext hidden" id="nov">
+                <p>
+                    세상을 아름답게 가꾸기 위해 내가 지켜야 할 기본 습관은 무엇일까요?
+                    <br>
+                    나만의 질문을 작성하여 사려깊은 질문학교로 보내주세요!
+                    <br>
+                    세상을 배타적으로 보지 않고 세상을 품을 수 있는 방법은 무엇일까요?
+                    <br>
+                    선한 가치를 위해서라면, 어떤 댓가까지 지불할 수 있을까요?
+                </p>
+            </div>
+            <div class="questiontext hidden" id="dec">
+                <p>
+                    누군가의 아픔에 공감하고, 도움을 준 경험이 있나요?
+                    <br>
+                    한 해 동안 내 자신을 어떤 방법으로 더 사랑하고 보살펴주었나요?
+                    <br>
+                    관계성이 없는 타인을 위해 자신이 생명을 내어 놓은 사람의 이야기를 들으면 어떤 생각이 드나요?
+                    <br>
+                    한 해 동안 나는 어떤 이들에게 어떤 사랑을 받았나요?
+                    <br>
+                    한 해 동안 내 삶은 어떤 가치를 전하는 삶이었나요?
+                </p>
+            </div>
+            <div class="writepagelink">
+                <a href="writepage.html" class="normal-link">
+                    글남기기
+                </a>
+            </div>
         </div>
     </main>
+
+    <script>
+        // 현재 날짜 가져오기
+        const today = new Date();
+        const month = today.getMonth() + 1; // 월은 0부터 시작하므로 +1 해줘야 함
+
+        // 특정 날짜 설정 (예: 9월 3일)
+        const jan = { month: 1 };
+        const feb = { month: 2 };
+        const mar = { month: 3 };
+        const apr = { month: 4 };
+        const may = { month: 5 };
+        const jun = { month: 6 };
+        const jul = { month: 7 };
+        const aug = { month: 8 };
+        const sep = { month: 9 };
+        const oct = { month: 10 };
+        const nov = { month: 11 };
+        const dec = { month: 12 };
+
+        // 첫 번째 조건: 지정된 날짜에 맞는 텍스트 표시
+        if (month === jan.month) {
+            document.getElementById('jan').classList.remove('hidden');
+        }
+        // 두 번째 조건: 다른 지정된 날짜에 맞는 텍스트 표시
+        else if (month === feb.month) {
+            document.getElementById('feb').classList.remove('hidden');
+        }
+        else if (month === mar.month) {
+            document.getElementById('mar').classList.remove('hidden');
+        }
+        else if (month === apr.month) {
+            document.getElementById('apr').classList.remove('hidden');
+        }
+        else if (month === may.month) {
+            document.getElementById('may').classList.remove('hidden');
+        }
+        else if (month === jun.month) {
+            document.getElementById('jun').classList.remove('hidden');
+        }
+        else if (month === jul.month) {
+            document.getElementById('jul').classList.remove('hidden');
+        }
+        else if (month === aug.month) {
+            document.getElementById('aug').classList.remove('hidden');
+        }
+        else if (month === sep.month) {
+            document.getElementById('sep').classList.remove('hidden');
+        }
+        else if (month === oct.month) {
+            document.getElementById('oct').classList.remove('hidden');
+        }
+        else if (month === nov.month) {
+            document.getElementById('nov').classList.remove('hidden');
+        }
+        // 기본 텍스트 표시: 어떤 지정된 날짜에도 해당하지 않는 경우
+        else {
+            document.getElementById('dec').classList.remove('hidden');
+        }
+    </script>
 
     <script>
         document.addEventListener("scroll", function () {
